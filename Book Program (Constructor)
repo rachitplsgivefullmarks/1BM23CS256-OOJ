@@ -1,0 +1,87 @@
+import java.util.*;
+class code
+{
+    public static void main(String args[])
+    {
+        int i,n;
+        System.out.println("how many objects you want to create");
+        Scanner s=new Scanner (System.in);
+        n=s.nextInt();
+        for(i=0;i<n;i++)
+        {
+            book bi=new book("novel","kuvempu",200,300);
+            bi.get_details();
+            bi.display();
+            System.out.println(bi);
+        }
+    }
+}
+class book
+{
+    String name;
+    String author;
+    int price;
+    int num_pages;
+    book(String name ,String author,int price,int num_pages){
+        this.name=name;
+        this.author=author;
+        this.price=price;
+        this.num_pages=num_pages;
+        
+    }
+    void get_details()
+    {
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter book name");
+        name=s.nextLine();
+        System.out.println("enter author name");
+        author=s.nextLine();
+        System.out.println("enter price");
+        price=s.nextInt();
+        System.out.println("enter num of pages");
+        num_pages=s.nextInt();
+        
+        
+    }
+    void display()
+    {
+        System.out.println("book name:"+name);
+          System.out.println("author name:"+author);
+            System.out.println("price:"+price);
+              System.out.println("number of pages:"+num_pages);
+        
+    }
+    public String toString()
+    {
+        return name+ " "+author+" "+price+" "+num_pages;
+    }
+}
+//output
+how many objects you want to create
+2
+enter book name
+wigns of fire
+enter author name
+abdul kalam
+enter price
+400
+enter num of pages
+300
+book name:wigns of fire
+author name:abdul kalam
+price:400
+number of pages:300
+wigns of fire abdul kalam 400 300
+enter book name
+ramayana darshanam
+enter author name
+kuvempu
+enter price
+500
+enter num of pages
+1000
+book name:ramayana darshanam
+author name:kuvempu
+price:500
+number of pages:1000
+ramayana darshanam kuvempu 500 1000
