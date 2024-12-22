@@ -1,0 +1,103 @@
+import java.util.*;
+class java
+{
+    public static void main(String args[])
+    {
+        code o1=new code();
+        o1.get_details();
+        o1.display();
+        o1.sgpa();
+    }
+}
+class code
+{
+    String name;
+    String usn;
+    int marks[]=new int[8];
+    int credits[]=new int [8];
+    void get_details()
+    {  Scanner s=new Scanner(System.in);
+        System.out.println("enter your name usn marks of eight subjects and credits of eight subjects");
+        name=s.nextLine();
+        usn=s.nextLine();
+        for(int i=0;i<8;i++)
+        marks[i]=s.nextInt();
+        for(int i=0;i<8;i++)
+        credits[i]=s.nextInt();
+        
+    }
+    void display()
+    {
+        System.out.println("name "+ name);
+        System.out.println("usn "+usn);
+        System.out.println("marks ");
+        for(int i=0;i<8;i++)
+        System.out.println(marks[i]);
+        System.out.println("credits");
+        for(int i=0;i<8;i++)
+        System.out.println(credits[i]);
+    }
+    void sgpa()
+    {
+        int sum=0;
+        for(int i=0;i<8;i++)
+        {if(marks[i]>=90)
+        sum+=10*credits[i];
+        else if(marks[i]>=80)
+        sum+=9*credits[i];
+        else if(marks[i]>=70)
+        sum+=8*credits[i];
+        else if(marks[i]>=60)
+        sum+=7*credits[i];
+        else if(marks[i]>=50)
+        sum+=6*credits[i];
+        }
+    int s=0;
+    for(int i=0;i<8;i++)
+    
+        s+=credits[i];
+        float sgpa=sum/s;
+    System.out.println("sgpa="+sgpa);
+}
+}
+//output
+enter your name usn marks of eight subjects and credits of eight subjects
+navami
+1bms23cs858
+93
+86
+74
+96
+80
+64
+79
+71
+4
+4
+4
+3
+3
+2
+1
+1
+name navami
+usn 1bms23cs858
+marks 
+93
+86
+74
+96
+80
+64
+79
+71
+credits
+4
+4
+4
+3
+3
+2
+1
+1
+sgpa=8.0
